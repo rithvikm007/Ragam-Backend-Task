@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= book.title %>'s Details</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <form action="/books" method="get">
+            <button>Go Back</button>
+        </form>
+        <div class="bookbook">
+            <h2><%= book.title %>'s Details</h2>
+            <p>Author: <%= book.author %></p>
+            <p>Published Year: <%= book.published_year %></p>
+            <p>Genre: <%= book.genre %></p>
+            <p>Available Copies: <%= book.available_copies %></p>
+        </div>
+    </body>
+</html>

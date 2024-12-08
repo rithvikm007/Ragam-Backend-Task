@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Library Management</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Library Management System</h1>
+            <p>Select an option below to view the users or books:</p>
+        </header>
+
+        <main>
+            <div class="option-container">
+                <div class="option">
+                    <h2>Users</h2>
+                    <p>View and manage the list of all users.</p>
+                    <form action="/users" method="get">
+                        <button type="submit">See All Users</button>
+                    </form>
+                </div>
+                <div class="option">
+                    <h2>Books</h2>
+                    <p>
+                        View and manage the collection of books in the library.
+                    </p>
+                    <form action="/books" method="get">
+                        <button type="submit">See All Books</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

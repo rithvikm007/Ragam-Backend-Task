@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= user.name %>'s Details</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <form action="/users" method="get">
+            <button>Go Back</button>
+        </form>
+        <h2><%= user.name %>'s Details</h2>
+        <p>Email: <%= user.email %></p>
+        <p>Membership Type: <%= user.membership_type %></p>
+        <p>
+            Registered Date: <%= user.registered_date.toString().split(" ").slice(1,4).join(" ") %>
+        </p>
+        <p>Books Borrowed:</p>
+        <% if(user.borrowed_books.length === 0){ %>
+        <p>No books borrowed</p>
+        <% } else { %> <% user.borrowed_books.forEach((book, index) => { %>
+        <div class="userbook">
+            <p><%= book.title %></p>
+            <form action="/users/<%= user._id %>?_method=DELETE" method="post">
+                <input type="hidden" name="book_id" value="<%= book._id %>" />
+                <input type="hidden" name="book_index" value="<%= index %>"  />
+                <button type="submit">Return this book</button>
+            </form>
+        </div>
+        <% }) %> <% } %>
+        <form action="/users/<%= user._id %>/borrow" method="get">
+            <button>Borrow a Book</button>
+        </form>
+    </body>
+</html>

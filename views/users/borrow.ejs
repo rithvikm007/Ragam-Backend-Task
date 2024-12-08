@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow a Book</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/users/<%= user._id %>" method="get">
+        <button>Go Back</button>
+    </form>
+    <h2>Available Books</h2>
+    <% for(book of books){  %>
+        <% if(book.available_copies>0){ %>
+            <h3><%= book.title %></h3>
+            <p>Author: <%= book.author %></p>
+            <p>Published Year: <%= book.published_year %></p>
+            <p>Genre: <%= book.genre %></p>
+            <p>Available Copies: <%= book.available_copies %></p>
+            <form action="/users/<%= user._id %>" method="post">
+                <input type="hidden" name="book_id" value="<%= book._id %>">
+                <button>Borrow this book</button>
+            </form>
+        <% } %> 
+    <% } %>
+</body>
+</html>

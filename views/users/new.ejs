@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add a New User</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <form action="/users" method="get">
+            <button>Go Back</button>
+        </form>
+        <h2>Add a New User</h2>
+        <div class="addForm">
+            <form action="/users" method="post">
+                <div class="inputDiv">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" /><br />
+                </div>
+                <div class="inputDiv">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" /><br />
+                </div>
+                <div class="inputDiv">
+                    <label for="membership">Membership Type:</label>
+                    <select id="membership" name="membership_type">
+                        <option value="Regular">Regular</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <br />
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+    </body>
+</html>
